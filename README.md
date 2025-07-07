@@ -1,91 +1,44 @@
-# STM32F103C8T6-OverClocking
+# STM32F103C8T6 Overclocking Results
 
-STABLE
-8MHz HSE PLL=2 SYSCLK=16MHz
-GPIO Toggle Speed: 175.81KHz
-Current: 16mA
-Power: 52mW
+## 🔧 Test Environment
 
-STABLE
-8MHz HSE PLL=3 SYSCLK=24MHz
-GPIO Toggle Speed: 263.75KHz
-Current: 19mA
-Power: 61mW
+- **MCU**: STM32F103C8T6  
+- **Clock Source**: 8 MHz HSE (High-Speed External)  
+- **PLL Multiplier**: x2 to x16  
+- **System Clock (SYSCLK)**: 16 MHz to 128 MHz  
+- **GPIO Toggle Test**: Single GPIO toggled in tight loop  
+- **Power Supply**: 3.3V  
+- **Measurement Tools**:
+  - GPIO toggle speed measured via oscilloscope
+  - Current measured with multimeter
+  - Power = Voltage × Current
+...
+- **GPIO Toggle Code**:
+```c
+HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, 1);
+HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, 0);
+```
+---
 
-STABLE
-8MHz HSE PLL=4 SYSCLK=32MHz
-GPIO Toggle Speed: 351.67KHz
-Current: 22mA
-Power: 71mW
+## 📊 Overclocking Performance Table
 
-STABLE
-8MHz HSE PLL=5 SYSCLK=40MHz
-GPIO Toggle Speed: 439.54KHz
-Current: 25mA
-Power: 79mW
+| PLL Multiplier | SYSCLK (MHz) | GPIO Toggle Speed (Hz) | Current (mA) | Power (mW) | Stability |
+|----------------|---------------|--------------------------|---------------|-------------|------------|
+| x2             | 16            | 175.81 KHz               | 16            | 52          | ✅ Stable  |
+| x3             | 24            | 263.75 KHz               | 19            | 61          | ✅ Stable  |
+| x4             | 32            | 351.67 KHz               | 22            | 71          | ✅ Stable  |
+| x5             | 40            | 439.54 KHz               | 25            | 79          | ✅ Stable  |
+| x6             | 48            | 527.48 KHz               | 27            | 89          | ✅ Stable  |
+| x7             | 56            | 615.46 KHz               | 30            | 97          | ✅ Stable  |
+| x8             | 64            | 703.31 KHz               | 33            | 103         | ✅ Stable  |
+| x9             | 72            | 791.31 KHz               | 36            | 112         | ✅ Stable  |
+| x10            | 80            | 879.18 KHz               | 39            | 122         | ✅ Stable  |
+| x11            | 88            | 966.95 KHz               | 42            | 128         | ✅ Stable  |
+| x12            | 96            | 1.0551 MHz               | 44            | 138         | ✅ Stable  |
+| x13            | 104           | 1.1430 MHz               | 47            | 146         | ✅ Stable  |
+| x14            | 112           | 1.2309 MHz               | 49            | 148         | ✅ Stable  |
+| x15            | 120           | 1.3187 MHz               | 51            | 151         | ✅ Stable  |
+| x16            | 128           | 1.4060 MHz               | 54            | 161         | ✅ Stable  |
 
-STABLE
-8MHz HSE PLL=6 SYSCLK=48MHz
-GPIO Toggle Speed: 527.48KHz
-Current: 27mA
-Power: 89mW
 
-STABLE
-8MHz HSE PLL=7 SYSCLK=56MHz
-GPIO Toggle Speed: 615.46KHz
-Current: 30mA
-Power: 97mW
-
-STABLE
-8MHz HSE PLL=8 SYSCLK=64MHz
-GPIO Toggle Speed: 703.31KHz
-Current: 33mA
-Power: 103mW
-
-STABLE
-8MHz HSE PLL=9 SYSCLK=72MHz
-GPIO Toggle Speed: 791.31KHz
-Current: 36mA
-Power: 112mW
-
-STABLE
-8MHz HSE PLL=10 SYSCLK=80MHz
-GPIO Toggle Speed: 879.18KHz
-Current: 39mA
-Power: 122mW
-
-STABLE
-8MHz HSE PLL=11 SYSCLK=88MHz
-GPIO Toggle Speed: 966.95KHz
-Current: 42mA
-Power: 128mW
-
-STABLE
-8MHz HSE PLL=12 SYSCLK=96MHz
-GPIO Toggle Speed: 1.0551MHz
-Current: 44mA
-Power: 138mW
-
-STABLE
-8MHz HSE PLL=13 SYSCLK=104MHz
-GPIO Toggle Speed: 1.1430MHz
-Current: 47mA
-Power: 146mW
-
-STABLE
-8MHz HSE PLL=14 SYSCLK=112MHz
-GPIO Toggle Speed: 1.2309MHz
-Current: 49mA
-Power: 148mW
-
-STABLE
-8MHz HSE PLL=15 SYSCLK=120MHz
-GPIO Toggle Speed: 1.3187MHz
-Current: 51mA
-Power: 151mW
-
-STABLE
-8MHz HSE PLL=16 SYSCLK=128MHz
-GPIO Toggle Speed: 1.406MHz
-Current: 54mA
-Power: 161mW
+![image](https://github.com/user-attachments/assets/c6167676-f366-4714-bdff-1b2fed33110d)
