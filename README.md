@@ -2,6 +2,9 @@
 
 ## 🔧 Test Environment
 
+> [!CAUTION]
+> Overclocking may cause the microcontroller to overheat and result in damage. Therefore, please exercise caution and only attempt this if you know exactly what you are doing. Use the data in this repository ***at your own risk***.
+
 - **MCU**: STM32F103C8T6  
 - **Clock Source**: 8 MHz HSE (High-Speed External)  
 - **PLL Multiplier**: x2 to x16  
