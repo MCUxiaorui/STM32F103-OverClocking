@@ -81,11 +81,11 @@ Power: 148mW
 STABLE
 8MHz HSE PLL=15 SYSCLK=120MHz
 GPIO Toggle Speed: 1.3187MHz
-Current: 52mA
-Power: 158mW
+Current: 51mA
+Power: 151mW
 
 STABLE
 8MHz HSE PLL=16 SYSCLK=128MHz
 GPIO Toggle Speed: 1.406MHz
-Current: 52mA
-Power: 156mW
+Current: 54mA
+Power: 161mW
